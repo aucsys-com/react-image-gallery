@@ -34,8 +34,8 @@ gulp.task('sass', async () => {
     .pipe(livereload());
 });
 
-gulp.task('scripts', () => {
-  watchify(browserify({
+gulp.task('scripts', async () => {
+  await watchify(browserify({
     entries: './example/app.js',
     extensions: ['.jsx'],
     debug: true,
@@ -48,9 +48,9 @@ gulp.task('scripts', () => {
     .pipe(livereload());
 });
 
-gulp.task('demo-src', () => {
+gulp.task('demo-src', async () => {
   process.env.NODE_ENV = 'production';
-  browserify({
+  await browserify({
     entries: './example/app.js',
     extensions: ['.jsx'],
     debug: true,
@@ -81,7 +81,7 @@ gulp.task('svg-js', () => (
     .pipe(gulp.dest('./build'))
 ));
 
-gulp.task('watch', () => {
+gulp.task('watch', async () => {
   livereload.listen();
   gulp.watch(['styles/**/*.scss'], gulp.series(['sass']));
   gulp.watch(['src/*.jsx', 'src/icons/*.jsx', 'example/app.js'], gulp.series(['scripts']));

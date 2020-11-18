@@ -6,6 +6,7 @@
   "scripts": {
     "start": "gulp dev",
     "build": "gulp build",
+    "demo": "gulp demo",
     "lint": "eslint --ext .js,.jsx src"
   },
   "repository": {
@@ -37,16 +38,16 @@
   },
   "homepage": "https://github.com/xiaolin/react-image-gallery",
   "devDependencies": {
-    "@babel/core": "^7.12.3",
+    "@babel/core": "7.12.3",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
-    "babel-eslint": "^10.0.2",
+    "babel-eslint": "10.1.0",
     "babel-plugin-transform-object-assign": "^6.8.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.5.0",
     "babel-runtime": "^6.26.0",
-    "babelify": "^7.3.0",
+    "babelify": "10.0.0",
     "browserify": "^13.1.1",
     "eslint": "^5.4.0",
     "eslint-config-airbnb": "^17.1.1",
@@ -65,9 +66,9 @@
     "node-sass": "^5.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.8.0"
+    "vinyl-buffer": "1.0.1",
+    "vinyl-source-stream": "2.0.0",
+    "watchify": "3.11.1"
   },
   "peerDependencies": {
     "react": "^16.0.0"
