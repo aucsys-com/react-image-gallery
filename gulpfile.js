@@ -61,7 +61,7 @@ gulp.task('demo-src', async () => {
     .pipe(uglify())
     .pipe(gulp.dest('./demo/'));
 
-  gulp.src(['./styles/css/image-gallery.css', './example/app.css'])
+  await gulp.src(['./styles/css/image-gallery.css', './example/app.css'])
     .pipe(concat('demo.css'))
     .pipe(cleanCSS({ keepSpecialComments: false }))
     .pipe(gulp.dest('./demo/'));

@@ -96,7 +96,6 @@ label {
   transition: all 1s ease;
 }
 
-
 @media (max-width: 1320px) {
   .app-sandbox-content {
     padding: 0 20px;
