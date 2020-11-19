@@ -68,6 +68,7 @@ export default class ImageGallery extends React.Component {
     showThumbnails: bool,
     showPlayButton: bool,
     showFullscreenButton: bool,
+    toggleFullscreenOnSliderClick: bool,
     disableThumbnailScroll: bool,
     disableKeyDown: bool,
     disableSwipe: bool,
@@ -122,6 +123,7 @@ export default class ImageGallery extends React.Component {
     showThumbnails: true,
     showPlayButton: true,
     showFullscreenButton: true,
+    toggleFullscreenOnSliderClick: false,
     disableThumbnailScroll: false,
     disableKeyDown: false,
     disableSwipe: false,
@@ -601,6 +603,7 @@ export default class ImageGallery extends React.Component {
       renderThumbInner,
       showThumbnails,
       showBullets,
+      toggleFullscreenOnSliderClick,
     } = this.props;
 
     const slides = [];
@@ -629,7 +632,12 @@ export default class ImageGallery extends React.Component {
           tabIndex="-1"
           className={`image-gallery-slide ${alignment} ${originalClass}`}
           style={slideStyle}
-          onClick={onClick}
+          onClick={(event) => {
+            onClick(event);
+            if (toggleFullscreenOnSliderClick) {
+              this.toggleFullScreen();
+            }
+          }}
           onKeyUp={this.handleSlideKeyUp}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
@@ -1360,6 +1368,7 @@ export default class ImageGallery extends React.Component {
       renderRightNav,
       showBullets,
       showFullscreenButton,
+      toggleFullscreenOnSliderClick,
       showIndex,
       showThumbnails,
       showNav,
@@ -1395,13 +1404,13 @@ export default class ImageGallery extends React.Component {
                 onSwiping={this.handleSwiping}
                 onSwiped={this.handleOnSwiped}
               >
-                <div className="image-gallery-slides">
+                <div className="image-gallery-slides" style={{ cursor: `${toggleFullscreenOnSliderClick ? 'pointer' : 'default'}` }}>
                   {slides}
                 </div>
               </Swipeable>
             </React.Fragment>
           ) : (
-            <div className="image-gallery-slides">
+            <div className="image-gallery-slides" style={{ cursor: `${toggleFullscreenOnSliderClick ? 'pointer' : 'default'}` }}>
               {slides}
             </div>
           )

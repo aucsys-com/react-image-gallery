@@ -16,6 +16,7 @@ class App extends React.Component {
       showThumbnails: true,
       showFullscreenButton: true,
       showGalleryFullscreenButton: true,
+      toggleFullscreenOnSliderClick: true,
       showPlayButton: true,
       showGalleryPlayButton: true,
       showNav: true,
@@ -202,6 +203,7 @@ class App extends React.Component {
           infinite={this.state.infinite}
           showBullets={this.state.showBullets}
           showFullscreenButton={this.state.showFullscreenButton && this.state.showGalleryFullscreenButton}
+          toggleFullscreenOnSliderClick={this.state.toggleFullscreenOnSliderClick}
           showPlayButton={this.state.showPlayButton && this.state.showGalleryPlayButton}
           showThumbnails={this.state.showThumbnails}
           showIndex={this.state.showIndex}

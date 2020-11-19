@@ -194,6 +194,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
   position: relative;
   white-space: nowrap;
   text-align: center;
+  outline: none;
 }
 
 .image-gallery-slide {
@@ -201,6 +202,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
   position: absolute;
   top: 0;
   width: 100%;
+  outline: none;
 
   &.center {
     position: relative;
@@ -209,6 +211,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
   .image-gallery-image {
     width: 100%;
     object-fit: contain;
+    outline: none;
   }
 
   .image-gallery-description {
