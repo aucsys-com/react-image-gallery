@@ -1,6 +1,6 @@
 {
   "name": "@aucsys/react-image-gallery",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "React carousel image gallery component with thumbnail and mobile support",
   "main": "./build/image-gallery.js",
   "scripts": {

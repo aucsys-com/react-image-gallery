@@ -633,7 +633,9 @@ export default class ImageGallery extends React.Component {
           className={`image-gallery-slide ${alignment} ${originalClass}`}
           style={slideStyle}
           onClick={(event) => {
-            onClick(event);
+            if (onClick) {
+              onClick(event);
+            }
             if (toggleFullscreenOnSliderClick) {
               this.toggleFullScreen();
             }
